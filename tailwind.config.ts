@@ -109,11 +109,13 @@ export default {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-warm": "var(--gradient-warm)",
         "gradient-subtle": "var(--gradient-subtle)",
+        "gradient-overlay": "var(--gradient-overlay)",
       },
       boxShadow: {
         "soft": "var(--shadow-soft)",
         "md": "var(--shadow-md)",
         "lg": "var(--shadow-lg)",
+        "xl": "var(--shadow-xl)",
       },
       transitionProperty: {
         "smooth": "var(--transition-smooth)",

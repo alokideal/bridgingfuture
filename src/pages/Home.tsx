@@ -65,27 +65,28 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img src={heroImage} alt="Education" className="w-full h-full object-cover" />
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Quality education for teachers and students" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-overlay"></div>
         </div>
-        <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
-          <div className="max-w-3xl animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
+          <div className="max-w-4xl animate-fade-in">
+            <h1 className="text-white mb-8 leading-tight">
               Empowering Education Through Technology
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
+            <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-3xl">
               We provide quality online and offline education, AI training, and computer courses to teachers and students worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/enrollment">
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto shadow-xl bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold">
                   Enroll Now
                   <ArrowRight className="ml-2" size={20} />
                 </Button>
               </Link>
               <Link to="/donate">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm font-semibold">
                   Support Our Mission
                   <Heart className="ml-2" size={20} />
                 </Button>
@@ -96,13 +97,13 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-16 md:py-20 bg-gradient-subtle border-y border-border/50">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center animate-fade-in">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-5xl md:text-6xl font-bold text-primary mb-3 tracking-tight">{stat.number}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -110,32 +111,32 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Services</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+      <section className="py-24 md:py-32">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-foreground mb-6">Our Services</h2>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               Comprehensive educational programs designed to empower both teachers and students
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 animate-fade-in border-border">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-gradient-hero rounded-lg flex items-center justify-center text-primary-foreground mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 animate-fade-in border-border/50 hover:border-primary/20 bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center text-primary-foreground mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link to="/services">
-              <Button variant="hero" size="lg">
+              <Button size="lg" className="shadow-lg font-semibold">
                 View All Services
               </Button>
             </Link>
@@ -144,48 +145,54 @@ const Home = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
+      <section className="py-24 md:py-32 bg-gradient-subtle">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-fade-in order-2 lg:order-1">
               <img
                 src={aiTrainingImage}
-                alt="AI Training"
-                className="rounded-lg shadow-lg w-full h-auto"
+                alt="AI training workshop with teachers learning new technology"
+                className="rounded-2xl shadow-xl w-full h-auto"
               />
             </div>
-            <div className="animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <div className="animate-fade-in order-1 lg:order-2">
+              <h2 className="text-foreground mb-8">
                 Our Mission
               </h2>
-              <p className="text-muted-foreground text-lg mb-6">
+              <p className="text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed">
                 We are committed to bridging the digital divide by providing accessible, high-quality education and training to underserved communities. Our programs combine traditional teaching methods with modern technology to create an inclusive learning environment.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Target className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4 p-4 rounded-xl hover:bg-background/50 transition-colors">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-primary" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Quality Education</h3>
-                    <p className="text-muted-foreground">Delivering excellence in every course and program</p>
+                    <h3 className="font-bold text-foreground mb-2 text-lg">Quality Education</h3>
+                    <p className="text-muted-foreground leading-relaxed">Delivering excellence in every course and program</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <Users className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div className="flex items-start space-x-4 p-4 rounded-xl hover:bg-background/50 transition-colors">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Community Impact</h3>
-                    <p className="text-muted-foreground">Creating lasting change in communities worldwide</p>
+                    <h3 className="font-bold text-foreground mb-2 text-lg">Community Impact</h3>
+                    <p className="text-muted-foreground leading-relaxed">Creating lasting change in communities worldwide</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <Award className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div className="flex items-start space-x-4 p-4 rounded-xl hover:bg-background/50 transition-colors">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6 text-primary" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Certified Programs</h3>
-                    <p className="text-muted-foreground">Industry-recognized certifications and training</p>
+                    <h3 className="font-bold text-foreground mb-2 text-lg">Certified Programs</h3>
+                    <p className="text-muted-foreground leading-relaxed">Industry-recognized certifications and training</p>
                   </div>
                 </div>
               </div>
-              <Link to="/about" className="inline-block mt-6">
-                <Button variant="hero">
+              <Link to="/about" className="inline-block mt-10">
+                <Button size="lg" className="shadow-lg font-semibold">
                   Learn More About Us
                 </Button>
               </Link>
@@ -195,61 +202,68 @@ const Home = () => {
       </section>
 
       {/* Recent News */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Latest News</h2>
-            <p className="text-muted-foreground text-lg">Stay updated with our recent activities and achievements</p>
+      <section className="py-24 md:py-32">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-foreground mb-6">Latest News</h2>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">Stay updated with our recent activities and achievements</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             {recentNews.map((news, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in">
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="w-full h-48 object-cover"
-                />
-                <CardContent className="p-6">
-                  <div className="text-sm text-muted-foreground mb-2">{news.date}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{news.title}</h3>
-                  <p className="text-muted-foreground mb-4">{news.description}</p>
-                  <Link to="/news" className="text-primary hover:underline inline-flex items-center">
+              <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 animate-fade-in border-border/50 hover:border-primary/20 group">
+                <div className="overflow-hidden">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-8">
+                  <div className="text-sm text-primary font-semibold mb-3">{news.date}</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight">{news.title}</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">{news.description}</p>
+                  <Link to="/news" className="text-primary hover:text-primary/80 font-semibold inline-flex items-center group/link">
                     Read More
-                    <ArrowRight size={16} className="ml-1" />
+                    <ArrowRight size={18} className="ml-2 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link to="/news">
-              <Button variant="outline">View All News</Button>
+              <Button variant="outline" size="lg" className="font-semibold">View All News</Button>
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-warm text-secondary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto animate-fade-in">
-            <Calendar className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-24 md:py-32 bg-gradient-warm text-secondary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.2),transparent_50%)]"></div>
+        </div>
+        <div className="container mx-auto px-6 text-center relative">
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <div className="w-20 h-20 bg-secondary-foreground/10 rounded-2xl flex items-center justify-center mx-auto mb-8 backdrop-blur-sm">
+              <Calendar className="w-10 h-10" />
+            </div>
+            <h2 className="mb-8 text-white">
               Ready to Start Your Learning Journey?
             </h2>
-            <p className="text-lg mb-8 opacity-90">
+            <p className="text-xl md:text-2xl mb-12 text-white/95 leading-relaxed max-w-3xl mx-auto">
               Join thousands of students and teachers who have transformed their lives through our programs
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Link to="/enrollment">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-secondary-foreground/10 border-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+                <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 shadow-xl font-semibold px-8">
                   Enroll Today
                 </Button>
               </Link>
               <Link to="/donate">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-secondary-foreground/10 border-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-secondary-foreground/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm font-semibold px-8">
                   Make a Donation
                 </Button>
               </Link>
