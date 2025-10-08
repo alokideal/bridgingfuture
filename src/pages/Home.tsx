@@ -10,33 +10,71 @@ import {
   ArrowRight,
   GraduationCap,
   Target,
-  Heart
+  Heart,
+  Lightbulb,
+  TrendingUp,
+  Globe,
+  Sparkles
 } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
 import aiTrainingImage from "@/assets/ai-training.jpg";
 import onlineTrainingImage from "@/assets/online-training.jpg";
+import ruralClassroom from "@/assets/rural-classroom.jpg";
+import teacherTraining from "@/assets/teacher-training-rural.jpg";
+import studentsTech from "@/assets/students-technology.jpg";
 
 const Home = () => {
   const services = [
     {
       icon: <BookOpen className="w-8 h-8" />,
       title: "Teacher Training",
-      description: "Professional development programs for educators to enhance teaching skills.",
+      description: "Professional development programs for educators to enhance teaching skills and methodologies.",
+      color: "from-primary to-primary/70"
     },
     {
       icon: <Laptop className="w-8 h-8" />,
       title: "Computer Courses",
-      description: "Comprehensive computer literacy and advanced technology courses.",
+      description: "Comprehensive computer literacy and advanced technology courses for digital empowerment.",
+      color: "from-accent to-accent/70"
     },
     {
       icon: <GraduationCap className="w-8 h-8" />,
       title: "AI Training",
-      description: "Cutting-edge artificial intelligence courses for modern education.",
+      description: "Cutting-edge artificial intelligence courses preparing students for the future of technology.",
+      color: "from-secondary to-secondary/70"
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Student Programs",
-      description: "Engaging educational programs designed for student success.",
+      description: "Engaging educational programs designed to unlock every student's potential.",
+      color: "from-primary to-accent"
+    },
+  ];
+
+  const visionGoals = [
+    {
+      icon: <Target className="w-10 h-10" />,
+      title: "Our Vision",
+      description: "To create an empowered India where every teacher and student in rural areas has access to quality education and technology, breaking the cycle of educational inequality.",
+      color: "bg-primary/10"
+    },
+    {
+      icon: <Lightbulb className="w-10 h-10" />,
+      title: "Innovation in Education",
+      description: "Integrate cutting-edge AI and technology training into traditional teaching methods to prepare rural communities for the digital future.",
+      color: "bg-accent/10"
+    },
+    {
+      icon: <TrendingUp className="w-10 h-10" />,
+      title: "Sustainable Growth",
+      description: "Build self-sustaining educational ecosystems in rural areas by training local teachers who become community leaders and mentors.",
+      color: "bg-secondary/10"
+    },
+    {
+      icon: <Globe className="w-10 h-10" />,
+      title: "Nationwide Impact",
+      description: "Expand our reach to 10,000+ villages across India, impacting over 1 million students and 50,000 teachers by 2030.",
+      color: "bg-primary/10"
     },
   ];
 
@@ -49,16 +87,22 @@ const Home = () => {
 
   const recentNews = [
     {
-      title: "New AI Course Launch",
+      title: "Rural Transformation: 500+ Villages Connected",
       date: "March 15, 2024",
-      description: "Introducing our latest AI fundamentals course for beginners.",
-      image: aiTrainingImage,
+      description: "Our AI and digital literacy programs have reached over 500 rural villages, empowering 15,000 students with future-ready skills.",
+      image: studentsTech,
     },
     {
-      title: "Teacher Training Success",
+      title: "Teacher Training Milestone Achieved",
       date: "March 10, 2024",
-      description: "Over 200 teachers completed our professional development program.",
-      image: onlineTrainingImage,
+      description: "Successfully certified 2,000 rural teachers in modern teaching methodologies and technology integration.",
+      image: teacherTraining,
+    },
+    {
+      title: "Community Learning Centers Launched",
+      date: "March 5, 2024",
+      description: "Inaugurated 50 new community learning centers bringing quality education to remote areas of rural India.",
+      image: ruralClassroom,
     },
   ];
 
@@ -122,12 +166,13 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 animate-fade-in border-border/50 hover:border-primary/20 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center text-primary-foreground mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md">
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 animate-bounce-in border-border/50 hover:border-primary/30 bg-card/50 backdrop-blur-sm overflow-hidden relative" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                <CardContent className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center text-primary-foreground mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-float">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{service.title}</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
@@ -147,56 +192,87 @@ const Home = () => {
       {/* Mission Section */}
       <section className="py-24 md:py-32 bg-gradient-subtle">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="animate-fade-in order-2 lg:order-1">
               <img
-                src={aiTrainingImage}
-                alt="AI training workshop with teachers learning new technology"
-                className="rounded-2xl shadow-xl w-full h-auto"
+                src={ruralClassroom}
+                alt="Rural Indian classroom with engaged students and dedicated teacher"
+                className="rounded-2xl shadow-2xl w-full h-auto hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="animate-fade-in order-1 lg:order-2">
+              <div className="inline-block mb-4">
+                <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold animate-pulse-glow">Our Mission</span>
+              </div>
               <h2 className="text-foreground mb-8">
-                Our Mission
+                Transforming Rural India Through Education
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed">
-                We are committed to bridging the digital divide by providing accessible, high-quality education and training to underserved communities. Our programs combine traditional teaching methods with modern technology to create an inclusive learning environment.
+                Bridging Future is committed to eliminating educational inequality in rural India. We bring world-class digital literacy, AI training, and modern teaching methods to underserved communities, empowering teachers and students to build a brighter tomorrow.
               </p>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-4 rounded-xl hover:bg-background/50 transition-colors">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Target className="w-6 h-6 text-primary" />
+                <div className="flex items-start space-x-4 p-5 rounded-xl hover:bg-background/50 transition-all duration-300 group border border-transparent hover:border-primary/20">
+                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Sparkles className="w-7 h-7 text-primary-foreground animate-pulse-glow" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-2 text-lg">Quality Education</h3>
-                    <p className="text-muted-foreground leading-relaxed">Delivering excellence in every course and program</p>
+                    <h3 className="font-bold text-foreground mb-2 text-lg">Quality Education for All</h3>
+                    <p className="text-muted-foreground leading-relaxed">Delivering world-class education to every corner of rural India, ensuring no child is left behind.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-4 rounded-xl hover:bg-background/50 transition-colors">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 text-primary" />
+                <div className="flex items-start space-x-4 p-5 rounded-xl hover:bg-background/50 transition-all duration-300 group border border-transparent hover:border-accent/20">
+                  <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/70 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Users className="w-7 h-7 text-accent-foreground animate-pulse-glow" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-2 text-lg">Community Impact</h3>
-                    <p className="text-muted-foreground leading-relaxed">Creating lasting change in communities worldwide</p>
+                    <h3 className="font-bold text-foreground mb-2 text-lg">Community-Driven Impact</h3>
+                    <p className="text-muted-foreground leading-relaxed">Building sustainable learning ecosystems by training local teachers as community champions.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-4 rounded-xl hover:bg-background/50 transition-colors">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6 text-primary" />
+                <div className="flex items-start space-x-4 p-5 rounded-xl hover:bg-background/50 transition-all duration-300 group border border-transparent hover:border-secondary/20">
+                  <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/70 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Award className="w-7 h-7 text-secondary-foreground animate-pulse-glow" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-2 text-lg">Certified Programs</h3>
-                    <p className="text-muted-foreground leading-relaxed">Industry-recognized certifications and training</p>
+                    <h3 className="font-bold text-foreground mb-2 text-lg">Certified Excellence</h3>
+                    <p className="text-muted-foreground leading-relaxed">Nationally recognized certifications that open doors to better opportunities and futures.</p>
                   </div>
                 </div>
               </div>
               <Link to="/about" className="inline-block mt-10">
-                <Button size="lg" className="shadow-lg font-semibold">
+                <Button size="lg" className="shadow-xl font-semibold group">
                   Learn More About Us
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
+          </div>
+
+          {/* Vision & Goals */}
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-block mb-4">
+              <span className="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold animate-pulse-glow">Vision & Goals</span>
+            </div>
+            <h2 className="text-foreground mb-6">Building India's Educational Future</h2>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Our vision extends beyond classrooms - we're creating a movement that transforms lives and communities across rural India.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {visionGoals.map((goal, index) => (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 animate-bounce-in border-border/50 hover:border-primary/30 overflow-hidden" style={{ animationDelay: `${index * 150}ms` }}>
+                <CardContent className="p-8">
+                  <div className={`w-20 h-20 ${goal.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+                    <div className="text-primary group-hover:animate-pulse-glow">
+                      {goal.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight group-hover:text-primary transition-colors duration-300">{goal.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-lg">{goal.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -209,23 +285,27 @@ const Home = () => {
             <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">Stay updated with our recent activities and achievements</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
             {recentNews.map((news, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 animate-fade-in border-border/50 hover:border-primary/20 group">
-                <div className="overflow-hidden">
+              <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-500 animate-bounce-in border-border/50 hover:border-primary/30 group" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="overflow-hidden relative">
                   <img
                     src={news.image}
                     alt={news.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <CardContent className="p-8">
-                  <div className="text-sm text-primary font-semibold mb-3">{news.date}</div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight">{news.title}</h3>
+                  <div className="text-sm text-primary font-semibold mb-3 flex items-center gap-2">
+                    <Calendar size={16} className="animate-pulse-glow" />
+                    {news.date}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4 tracking-tight group-hover:text-primary transition-colors duration-300">{news.title}</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">{news.description}</p>
                   <Link to="/news" className="text-primary hover:text-primary/80 font-semibold inline-flex items-center group/link">
                     Read More
-                    <ArrowRight size={18} className="ml-2 group-hover/link:translate-x-1 transition-transform" />
+                    <ArrowRight size={18} className="ml-2 group-hover/link:translate-x-2 transition-transform duration-300" />
                   </Link>
                 </CardContent>
               </Card>

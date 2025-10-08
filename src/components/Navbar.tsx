@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/bridging-future-logo.png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,11 +24,9 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/98 backdrop-blur-md border-b border-border/50 shadow-soft transition-all duration-300">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-11 h-11 bg-gradient-hero rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
-              <span className="text-primary-foreground font-bold text-xl">E</span>
-            </div>
-            <span className="font-bold text-2xl text-foreground tracking-tight">EduNGO</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img src={logo} alt="Bridging Future Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-110 animate-float" />
+            <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">Bridging Future</span>
           </Link>
 
           {/* Desktop Navigation */}
