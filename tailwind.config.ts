@@ -98,17 +98,30 @@ export default {
             transform: "translateX(0)",
           },
         },
-        "bounce-in": {
+        "scale-up": {
           "0%": {
-            transform: "scale(0.8)",
+            transform: "scale(0.95)",
             opacity: "0",
-          },
-          "50%": {
-            transform: "scale(1.05)",
           },
           "100%": {
             transform: "scale(1)",
             opacity: "1",
+          },
+        },
+        "shimmer": {
+          "0%": {
+            backgroundPosition: "-200% center",
+          },
+          "100%": {
+            backgroundPosition: "200% center",
+          },
+        },
+        "spin-slow": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
           },
         },
         "float": {
@@ -133,9 +146,11 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.3s ease-out",
-        "bounce-in": "bounce-in 0.6s ease-out",
+        "scale-up": "scale-up 0.5s ease-out",
         "float": "float 3s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "shimmer": "shimmer 3s ease-in-out infinite",
+        "spin-slow": "spin-slow 3s linear infinite",
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
