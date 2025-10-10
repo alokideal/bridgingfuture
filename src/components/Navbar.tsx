@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={logo} alt="Bridging Future Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-110 animate-float" />
+            <img src={logo} alt="Bridging Future Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
             <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">Bridging Future</span>
           </Link>
 

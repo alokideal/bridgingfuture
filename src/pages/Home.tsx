@@ -36,29 +36,29 @@ const Home = () => {
   const services = [
     {
       icon: <BookOpen className="w-8 h-8 text-white" />,
-      title: "Teacher Training",
-      description: "Professional development programs for educators to enhance teaching skills and methodologies.",
+      title: "Teacher Training Programs",
+      description: "Comprehensive professional development programs for educators featuring modern pedagogical methods, classroom management, technology integration, and student-centered learning approaches. Our certified trainers provide hands-on workshops that transform teaching practices.",
       color: "from-primary via-primary/80 to-primary/60",
       image: teacherWorkshop
     },
     {
       icon: <Laptop className="w-8 h-8 text-white" />,
-      title: "Computer Courses",
-      description: "Comprehensive computer literacy and advanced technology courses for digital empowerment.",
+      title: "Computer & Digital Literacy",
+      description: "From basic computer operations to advanced software development, our courses cover MS Office, programming languages, web development, and digital marketing. We provide hands-on training with real-world projects to ensure practical skill development.",
       color: "from-accent via-accent/80 to-accent/60",
       image: teacherComputer
     },
     {
       icon: <Rocket className="w-8 h-8 text-white" />,
-      title: "AI Training",
-      description: "Cutting-edge artificial intelligence courses preparing students for the future of technology.",
+      title: "AI & Machine Learning",
+      description: "Cutting-edge artificial intelligence and machine learning courses that prepare students for the future. Learn Python, data science, neural networks, and practical AI applications through project-based learning and industry-standard tools.",
       color: "from-secondary via-secondary/80 to-secondary/60",
       image: aiLearning
     },
     {
       icon: <Users className="w-8 h-8 text-white" />,
-      title: "Student Programs",
-      description: "Engaging educational programs designed to unlock every student's potential.",
+      title: "Student Development Programs",
+      description: "Holistic educational programs designed to unlock every student's potential through STEM education, critical thinking workshops, leadership training, and career guidance. We focus on building confidence and 21st-century skills.",
       color: "from-primary via-accent to-secondary",
       image: studentsClassroom
     },
@@ -68,30 +68,30 @@ const Home = () => {
     {
       icon: <Target className="w-10 h-10" />,
       title: "Our Vision",
-      description: "To create an empowered India where every teacher and student in rural areas has access to quality education and technology, breaking the cycle of educational inequality and fostering sustainable development.",
+      description: "To create an empowered India where every teacher and student in rural areas has access to quality education and technology, breaking the cycle of educational inequality and fostering sustainable development. We envision a future where rural communities are equipped with the skills and knowledge to compete globally while preserving their cultural heritage.",
       color: "bg-primary/10",
-      highlights: ["Quality Education Access", "Break Inequality Cycle", "Rural Empowerment"]
+      highlights: ["Universal Education Access", "Break Inequality Cycle", "Sustainable Development", "Cultural Preservation"]
     },
     {
       icon: <Lightbulb className="w-10 h-10" />,
       title: "Innovation in Education",
-      description: "Integrate cutting-edge AI and technology training into traditional teaching methods to prepare rural communities for the digital future, bridging the gap between urban and rural education quality.",
+      description: "Integrate cutting-edge AI and technology training into traditional teaching methods to prepare rural communities for the digital future. We bridge the gap between urban and rural education quality by bringing the latest educational innovations directly to village classrooms, ensuring no student is left behind in the digital revolution.",
       color: "bg-accent/10",
-      highlights: ["AI Integration", "Modern Methods", "Digital Literacy"]
+      highlights: ["AI & Machine Learning", "Digital Transformation", "Modern Pedagogy", "Tech Integration"]
     },
     {
       icon: <TrendingUp className="w-10 h-10" />,
       title: "Sustainable Growth",
-      description: "Build self-sustaining educational ecosystems in rural areas by training local teachers who become community leaders and mentors, creating a ripple effect of positive change.",
+      description: "Build self-sustaining educational ecosystems in rural areas by training local teachers who become community leaders and mentors. Our train-the-trainer model creates a multiplier effect, where each certified teacher empowers dozens more, creating a ripple effect of positive change that transforms entire districts and regions.",
       color: "bg-secondary/10",
-      highlights: ["Community Leadership", "Teacher Empowerment", "Sustainable Model"]
+      highlights: ["Community Leadership", "Teacher Empowerment", "Multiplier Effect", "Long-term Impact"]
     },
     {
       icon: <Globe className="w-10 h-10" />,
       title: "Nationwide Impact",
-      description: "Expand our reach to 10,000+ villages across India, impacting over 1 million students and 50,000 teachers by 2030, with a focus on the most underserved regions.",
+      description: "Expand our reach to 10,000+ villages across India by 2030, impacting over 1 million students and 50,000 teachers with a special focus on the most underserved regions. We partner with state governments, local NGOs, and community organizations to ensure our programs reach every corner of rural India, from the Himalayas to the coastal villages.",
       color: "bg-success/10",
-      highlights: ["10,000+ Villages", "1M Students", "50K Teachers by 2030"]
+      highlights: ["10,000+ Villages", "1M Students", "50K Teachers", "Pan-India Coverage"]
     },
   ];
 
@@ -101,55 +101,55 @@ const Home = () => {
       title: "Rural Reach",
       stat: "500+",
       label: "Villages Connected",
-      description: "Bringing quality education to India's most remote areas"
+      description: "Bringing quality education to India's most remote areas across 15 states"
     },
     {
       icon: <Shield className="w-8 h-8 text-accent" />,
       title: "Certified Programs",
       stat: "95%",
       label: "Success Rate",
-      description: "Nationally recognized certifications with proven outcomes"
+      description: "Government-recognized certifications with proven outcomes and career advancement"
     },
     {
       icon: <Zap className="w-8 h-8 text-secondary" />,
       title: "Digital Transformation",
-      stat: "20,000+",
+      stat: "25,000+",
       label: "Lives Transformed",
-      description: "Students and teachers equipped with digital skills"
+      description: "Students and teachers equipped with future-ready digital and AI skills"
     },
     {
       icon: <Heart className="w-8 h-8 text-success" />,
       title: "Community Impact",
-      stat: "100+",
+      stat: "150+",
       label: "Partner Organizations",
-      description: "Collaborative approach to educational development"
+      description: "Collaborative partnerships with government bodies, NGOs, and local communities"
     },
   ];
 
   const stats = [
-    { number: "10,000+", label: "Students Trained" },
-    { number: "500+", label: "Teachers Certified" },
-    { number: "50+", label: "Courses Offered" },
-    { number: "15+", label: "Years Experience" },
+    { number: "25,000+", label: "Students Empowered" },
+    { number: "2,500+", label: "Teachers Certified" },
+    { number: "500+", label: "Villages Reached" },
+    { number: "15+", label: "Years of Impact" },
   ];
 
   const recentNews = [
     {
-      title: "Rural Transformation: 500+ Villages Connected",
+      title: "Major Expansion: 500+ Villages Connected to Digital Education",
       date: "March 15, 2024",
-      description: "Our AI and digital literacy programs have reached over 500 rural villages, empowering 15,000 students with future-ready skills.",
+      description: "Bridging Future has successfully expanded its reach to over 500 rural villages across 15 states. Our AI and digital literacy programs have empowered 25,000+ students with future-ready skills, creating new opportunities in technology careers.",
       image: studentsTech,
     },
     {
-      title: "Teacher Training Milestone Achieved",
+      title: "Historic Milestone: 2,500 Rural Teachers Certified",
       date: "March 10, 2024",
-      description: "Successfully certified 2,000 rural teachers in modern teaching methodologies and technology integration.",
+      description: "We've achieved a landmark milestone by certifying 2,500 rural teachers in modern teaching methodologies, technology integration, and AI-assisted education. These teachers are now transforming education in their communities.",
       image: teacherTraining,
     },
     {
-      title: "Community Learning Centers Launched",
+      title: "50 New Community Learning Centers Inaugurated",
       date: "March 5, 2024",
-      description: "Inaugurated 50 new community learning centers bringing quality education to remote areas of rural India.",
+      description: "In partnership with state governments, we've launched 50 state-of-the-art community learning centers equipped with computers, internet connectivity, and AI learning tools, bringing world-class education to India's most remote regions.",
       image: ruralClassroom,
     },
   ];
@@ -165,10 +165,10 @@ const Home = () => {
         <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
           <div className="max-w-4xl animate-fade-in">
             <h1 className="text-white mb-8 leading-tight">
-              Empowering Rural India Through Education
+              Empowering Rural India Through Education & Technology
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-3xl">
-              Bridging Future brings world-class education, AI training, and technology courses to rural teachers and students across India.
+              Bridging Future is a government-recognized non-profit organization dedicated to bringing world-class education, AI training, and cutting-edge technology courses to rural teachers and students across India. We believe every child deserves access to quality education, regardless of their geographic location.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/enrollment">
@@ -303,7 +303,7 @@ const Home = () => {
                 Transforming Rural India Through Education
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed">
-                Bridging Future is committed to eliminating educational inequality in rural India. We bring world-class digital literacy, AI training, and modern teaching methods to underserved communities, empowering teachers and students to build a brighter tomorrow.
+                Bridging Future is a government-recognized non-profit organization committed to eliminating educational inequality in rural India. We believe that access to quality education is a fundamental right, not a privilege. Through our comprehensive programs, we bring world-class digital literacy, AI training, and modern teaching methods to underserved communities across India. Our mission is to empower teachers with cutting-edge skills and equip students with the knowledge they need to thrive in the 21st century, creating a ripple effect of positive change that transforms entire communities.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 p-6 rounded-xl hover:bg-muted/30 transition-all duration-300 group border border-border/30 hover:border-primary/40 hover:shadow-xl bg-gradient-to-br from-primary/5 to-transparent">
