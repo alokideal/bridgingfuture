@@ -17,7 +17,10 @@ import {
   Sparkles,
   MapPin,
   Shield,
-  Zap
+  Zap,
+  Rocket,
+  Star,
+  CheckCircle2
 } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
 import studentsClassroom from "@/assets/students-classroom-india.jpg";
@@ -32,31 +35,31 @@ import studentsTech from "@/assets/students-technology.jpg";
 const Home = () => {
   const services = [
     {
-      icon: <BookOpen className="w-8 h-8" />,
+      icon: <BookOpen className="w-8 h-8 text-white" />,
       title: "Teacher Training",
       description: "Professional development programs for educators to enhance teaching skills and methodologies.",
-      color: "from-primary to-primary/70",
+      color: "from-primary via-primary/80 to-primary/60",
       image: teacherWorkshop
     },
     {
-      icon: <Laptop className="w-8 h-8" />,
+      icon: <Laptop className="w-8 h-8 text-white" />,
       title: "Computer Courses",
       description: "Comprehensive computer literacy and advanced technology courses for digital empowerment.",
-      color: "from-accent to-accent/70",
+      color: "from-accent via-accent/80 to-accent/60",
       image: teacherComputer
     },
     {
-      icon: <GraduationCap className="w-8 h-8" />,
+      icon: <Rocket className="w-8 h-8 text-white" />,
       title: "AI Training",
       description: "Cutting-edge artificial intelligence courses preparing students for the future of technology.",
-      color: "from-secondary to-secondary/70",
+      color: "from-secondary via-secondary/80 to-secondary/60",
       image: aiLearning
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-8 h-8 text-white" />,
       title: "Student Programs",
       description: "Engaging educational programs designed to unlock every student's potential.",
-      color: "from-primary to-accent",
+      color: "from-primary via-accent to-secondary",
       image: studentsClassroom
     },
   ];
@@ -217,9 +220,11 @@ const Home = () => {
               <Card key={index} className="group hover:shadow-2xl transition-all duration-500 animate-scale-up border-border/50 hover:border-primary/30 bg-card/50 backdrop-blur-sm overflow-hidden relative" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="relative h-48 overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-60 group-hover:opacity-40 transition-opacity duration-500`}></div>
-                  <div className="absolute top-4 right-4 w-14 h-14 bg-white/90 rounded-xl flex items-center justify-center text-primary shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                    {service.icon}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-70 group-hover:opacity-50 transition-opacity duration-500`}></div>
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-white to-white/90 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 animate-float">
+                    <div className="animate-pulse-glow">
+                      {service.icon}
+                    </div>
                   </div>
                 </div>
                 <CardContent className="p-8 relative z-10">
@@ -256,15 +261,18 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {impactAreas.map((area, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 animate-scale-up border-border/50 hover:border-primary/20 overflow-hidden text-center" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 animate-scale-up border-border/50 hover:border-primary/20 overflow-hidden text-center bg-gradient-to-br from-card to-background" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-background to-muted rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg border-2 border-primary/20">
                     <div className="animate-float">
                       {area.icon}
                     </div>
                   </div>
-                  <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">{area.stat}</div>
-                  <div className="text-lg font-semibold text-foreground mb-2">{area.label}</div>
+                  <div className="text-5xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">{area.stat}</div>
+                  <div className="text-lg font-bold text-foreground mb-2 flex items-center gap-2 justify-center">
+                    <Star className="w-4 h-4 text-primary fill-primary animate-pulse-glow" />
+                    {area.label}
+                  </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{area.description}</p>
                 </CardContent>
               </Card>
@@ -298,30 +306,39 @@ const Home = () => {
                 Bridging Future is committed to eliminating educational inequality in rural India. We bring world-class digital literacy, AI training, and modern teaching methods to underserved communities, empowering teachers and students to build a brighter tomorrow.
               </p>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-5 rounded-xl hover:bg-muted/30 transition-all duration-300 group border border-transparent hover:border-primary/20">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Sparkles className="w-7 h-7 text-primary-foreground" />
+                <div className="flex items-start space-x-4 p-6 rounded-xl hover:bg-muted/30 transition-all duration-300 group border border-border/30 hover:border-primary/40 hover:shadow-xl bg-gradient-to-br from-primary/5 to-transparent">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary via-primary/80 to-primary/60 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-xl">
+                    <Sparkles className="w-8 h-8 text-primary-foreground animate-pulse-glow" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-2 text-lg">Quality Education for All</h3>
+                    <h3 className="font-bold text-foreground mb-2 text-lg flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary animate-pulse-glow" />
+                      Quality Education for All
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed">Delivering world-class education to every corner of rural India, ensuring no child is left behind.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-5 rounded-xl hover:bg-muted/30 transition-all duration-300 group border border-transparent hover:border-accent/20">
-                  <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/70 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Users className="w-7 h-7 text-accent-foreground" />
+                <div className="flex items-start space-x-4 p-6 rounded-xl hover:bg-muted/30 transition-all duration-300 group border border-border/30 hover:border-accent/40 hover:shadow-xl bg-gradient-to-br from-accent/5 to-transparent">
+                  <div className="w-16 h-16 bg-gradient-to-br from-accent via-accent/80 to-accent/60 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-xl">
+                    <Users className="w-8 h-8 text-accent-foreground animate-float" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-2 text-lg">Community-Driven Impact</h3>
+                    <h3 className="font-bold text-foreground mb-2 text-lg flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-accent animate-pulse-glow" />
+                      Community-Driven Impact
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed">Building sustainable learning ecosystems by training local teachers as community champions.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-5 rounded-xl hover:bg-muted/30 transition-all duration-300 group border border-transparent hover:border-secondary/20">
-                  <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/70 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Award className="w-7 h-7 text-secondary-foreground" />
+                <div className="flex items-start space-x-4 p-6 rounded-xl hover:bg-muted/30 transition-all duration-300 group border border-border/30 hover:border-secondary/40 hover:shadow-xl bg-gradient-to-br from-secondary/5 to-transparent">
+                  <div className="w-16 h-16 bg-gradient-to-br from-secondary via-secondary/80 to-secondary/60 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-xl">
+                    <Award className="w-8 h-8 text-secondary-foreground animate-shimmer" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-2 text-lg">Certified Excellence</h3>
+                    <h3 className="font-bold text-foreground mb-2 text-lg flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-secondary animate-pulse-glow" />
+                      Certified Excellence
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed">Nationally recognized certifications that open doors to better opportunities and futures.</p>
                   </div>
                 </div>
@@ -348,19 +365,22 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {visionGoals.map((goal, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 animate-scale-up border-border/50 hover:border-primary/30 overflow-hidden" style={{ animationDelay: `${index * 150}ms` }}>
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 animate-scale-up border-border/50 hover:border-primary/40 overflow-hidden bg-gradient-to-br from-card to-background" style={{ animationDelay: `${index * 150}ms` }}>
                 <CardContent className="p-8">
-                  <div className={`w-20 h-20 ${goal.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
-                    <div className="text-primary group-hover:animate-float">
+                  <div className={`w-24 h-24 ${goal.color} rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl border-2 border-primary/20`}>
+                    <div className="text-primary animate-float">
                       {goal.icon}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight group-hover:text-primary transition-colors duration-300">{goal.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                    <Star className="w-6 h-6 text-primary fill-primary animate-pulse-glow" />
+                    {goal.title}
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed text-lg mb-6">{goal.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {goal.highlights.map((highlight, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-primary/5 text-primary text-sm rounded-full border border-primary/20 group-hover:bg-primary/10 transition-colors duration-300">
-                        {highlight}
+                      <span key={idx} className="px-4 py-2 bg-gradient-to-r from-primary/10 to-accent/10 text-primary text-sm rounded-full border-2 border-primary/30 group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-300 font-semibold shadow-sm">
+                        ✓ {highlight}
                       </span>
                     ))}
                   </div>
