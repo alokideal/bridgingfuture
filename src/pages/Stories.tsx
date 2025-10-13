@@ -1,51 +1,55 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
-import aiTrainingImage from "@/assets/ai-training.jpg";
-import onlineTrainingImage from "@/assets/online-training.jpg";
+import teacherDigitalImage from "@/assets/story-teacher-digital.jpg";
+import studentCodingImage from "@/assets/story-student-coding.jpg";
+import aiGraduateImage from "@/assets/story-ai-graduate.jpg";
+import principalImage from "@/assets/story-principal.jpg";
+import careerWomanImage from "@/assets/story-career-woman.jpg";
+import careerSwitcherImage from "@/assets/story-career-switcher.jpg";
 
 const Stories = () => {
   const stories = [
     {
-      name: "Sarah Johnson",
-      role: "High School Teacher",
-      image: onlineTrainingImage,
-      story: "After completing the Digital Tools for Educators course, I completely transformed my classroom. My students are more engaged, and I can now incorporate technology seamlessly into my lessons. The training gave me the confidence to embrace digital education.",
-      impact: "Now trains other teachers in digital literacy",
+      name: "Ananya Sharma",
+      role: "Government School Teacher, Varanasi",
+      image: teacherDigitalImage,
+      story: "After completing the Digital Tools for Educators course at Bridging Future Trust, I completely transformed my classroom in rural Varanasi. My students are now more engaged with technology, and I can seamlessly integrate digital learning into our curriculum. The training gave me the confidence to bridge the digital divide in our community.",
+      impact: "Now trains 50+ teachers across Uttar Pradesh in digital literacy",
     },
     {
-      name: "Michael Chen",
+      name: "Rahul Verma",
       role: "Student, Web Development Course",
-      image: aiTrainingImage,
-      story: "I started with zero coding knowledge. Six months later, I built my first website and landed an internship at a tech company. The instructors at EduNGO didn't just teach me to code—they taught me how to think like a developer.",
-      impact: "Currently working as a junior web developer",
+      image: studentCodingImage,
+      story: "Coming from a small town in Uttar Pradesh with zero coding knowledge, I was hesitant. But six months after joining Bridging Future Trust's web development program, I built my first e-commerce website and secured an internship at a Bangalore-based tech startup. The instructors didn't just teach me to code—they taught me how to think like a problem solver.",
+      impact: "Currently working as a junior web developer at a leading IT firm",
     },
     {
-      name: "Priya Patel",
+      name: "Priya Gupta",
       role: "AI Training Graduate",
-      image: aiTrainingImage,
-      story: "The AI Fundamentals course opened up a whole new world for me. Coming from a non-technical background, I was nervous at first, but the supportive environment and excellent teaching made all the difference. I'm now pursuing a career in data science.",
-      impact: "Started her own AI consulting business",
+      image: aiGraduateImage,
+      story: "The AI Fundamentals course at Bridging Future Trust opened up a whole new world for me. Coming from a non-technical background in Varanasi, I was nervous at first, but the supportive environment and excellent mentorship made all the difference. Today, I'm pursuing advanced studies in data science and helping local businesses leverage AI for growth.",
+      impact: "Started her own AI consulting firm serving MSMEs in North India",
     },
     {
-      name: "James Martinez",
-      role: "Elementary School Principal",
-      image: onlineTrainingImage,
-      story: "We enrolled 15 of our teachers in the Teacher Training Program. The results have been remarkable. Our school has seen improved student performance, and our teachers report feeling more confident and equipped to handle modern classroom challenges.",
-      impact: "School received excellence award for innovation",
+      name: "Rajesh Kumar",
+      role: "Government School Principal, Sunderpur",
+      image: principalImage,
+      story: "We enrolled 20 of our teachers in Bridging Future Trust's comprehensive Teacher Training Program. The transformation has been remarkable. Our school in Sunderpur has seen a 40% improvement in student engagement, and our teachers now confidently use digital tools and AI-assisted learning methods to deliver quality education even in resource-constrained settings.",
+      impact: "School received District Excellence Award for Educational Innovation 2024",
     },
     {
-      name: "Amina Hassan",
+      name: "Meera Singh",
       role: "Computer Courses Graduate",
-      image: aiTrainingImage,
-      story: "As a single mother trying to re-enter the workforce, I needed practical skills. The computer courses at EduNGO gave me exactly that. From basic office software to data analysis, I learned everything I needed. Within two months of graduating, I found a great job.",
-      impact: "Now employed as an administrative manager",
+      image: careerWomanImage,
+      story: "As a single mother in Varanasi trying to re-enter the workforce, I needed practical skills. The computer courses at Bridging Future Trust gave me exactly that—from MS Office to advanced data analysis. Within two months of completing the program, I secured a position as an administrative manager. This training changed my family's future.",
+      impact: "Now employed as Senior Administrative Manager, mentoring other women",
     },
     {
-      name: "David Thompson",
+      name: "Vikram Pandey",
       role: "Career Switcher",
-      image: onlineTrainingImage,
-      story: "At 45, I thought it was too late to learn new skills. EduNGO proved me wrong. The Python programming course was challenging but incredibly rewarding. The age-diverse classroom showed me that learning has no expiration date.",
-      impact: "Transitioned to a new career in software development",
+      image: careerSwitcherImage,
+      story: "At 45, working in a traditional business in Varanasi, I thought it was too late to learn programming. Bridging Future Trust proved me wrong. The Python and AI course was challenging but incredibly rewarding. The age-diverse classroom and patient instructors showed me that learning truly has no expiration date. Today, I'm building AI solutions for small businesses.",
+      impact: "Successfully transitioned to a new career in software development and AI",
     },
   ];
 
@@ -135,7 +139,7 @@ const Stories = () => {
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold text-foreground mb-4">Share Your Story</h3>
               <p className="text-muted-foreground mb-6">
-                Are you an EduNGO graduate? We'd love to hear about your journey and how our programs have impacted your life.
+                Are you a Bridging Future Trust graduate? We'd love to hear about your journey and how our programs have impacted your life.
               </p>
               <a href="/enrollment">
                 <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">

@@ -10,12 +10,17 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-11 h-11 bg-gradient-hero rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-primary-foreground font-bold text-xl">E</span>
+                <span className="text-primary-foreground font-bold text-xl">BF</span>
               </div>
-              <span className="font-bold text-2xl text-foreground tracking-tight">EduNGO</span>
+              <span className="font-bold text-2xl text-foreground tracking-tight">Bridging Future</span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Empowering teachers and students through quality education, AI training, and computer courses.
+              Empowering teachers and students through quality education, AI training, and digital literacy programs.
+            </p>
+            <p className="text-muted-foreground mt-3">
+              <a href="https://www.bridgingfuture.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                www.bridgingfuture.com
+              </a>
             </p>
           </div>
 
@@ -79,15 +84,17 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-muted-foreground">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0 text-primary" />
-                <span className="leading-relaxed">123 Education Street, Learning City, 12345</span>
-              </li>
-              <li className="flex items-center space-x-3 text-muted-foreground">
-                <Phone size={18} className="flex-shrink-0 text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <div className="leading-relaxed">
+                  <p className="font-medium text-foreground">Dr. Alok Srivastava</p>
+                  <p className="text-sm">Managing Trustee</p>
+                  <p className="mt-1">306, Rudra Sanskriti Apartment,<br />Brij Enclave Colony, Sunderpur,<br />Varanasi, Uttar Pradesh – 221005</p>
+                </div>
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <Mail size={18} className="flex-shrink-0 text-primary" />
-                <span>info@edungo.org</span>
+                <a href="mailto:info@bridgingfuture.com" className="hover:text-primary transition-colors">
+                  info@bridgingfuture.com
+                </a>
               </li>
             </ul>
             <div className="flex space-x-3 mt-6">
@@ -124,7 +131,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border/50 mt-12 pt-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} EduNGO. All rights reserved. Empowering education worldwide.</p>
+          <p>&copy; {new Date().getFullYear()} Bridging Future Trust. All rights reserved. Innovate, Educate & Empower.</p>
         </div>
       </div>
     </footer>
