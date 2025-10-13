@@ -20,7 +20,10 @@ import {
   Zap,
   Rocket,
   Star,
-  CheckCircle2
+  CheckCircle2,
+  Eye,
+  Handshake,
+  ChevronDown
 } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
 import studentsClassroom from "@/assets/students-classroom-india.jpg";
@@ -157,32 +160,163 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Quality education for teachers and students" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-overlay"></div>
+          <img
+            src={heroImage}
+            alt="Indian students learning with technology"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-secondary/80" />
         </div>
-        <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
-          <div className="max-w-4xl animate-fade-in">
-            <h1 className="text-white mb-8 leading-tight">
-              Empowering Rural India Through Education & Technology
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <div className="mb-4 animate-fade-in">
+              <span className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-lg font-semibold">
+                Bridging Future Trust
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              Innovate, Educate & Empower
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-3xl">
-              Bridging Future is a government-recognized non-profit organization dedicated to bringing world-class education, AI training, and cutting-edge technology courses to rural teachers and students across India. We believe every child deserves access to quality education, regardless of their geographic location.
+            <p className="text-xl md:text-2xl mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              Transforming rural education through AI-driven training, digital literacy, and collaborative research
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/enrollment">
-                <Button size="lg" className="w-full sm:w-auto shadow-xl bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold group">
-                  Enroll Now
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                </Button>
-              </Link>
-              <Link to="/donate">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm font-semibold group">
-                  Support Our Mission
-                  <Heart className="ml-2 group-hover:scale-110 transition-transform" size={20} />
-                </Button>
-              </Link>
+            <div className="flex flex-wrap gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <Button size="lg" variant="secondary" className="group hover:scale-105 transition-transform">
+                Join Our Workshops
+                <Rocket className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 hover:scale-105 transition-transform">
+                Explore Resources
+              </Button>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 hover:scale-105 transition-transform">
+                Partner With Us
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="h-8 w-8 text-white" />
+        </div>
+      </section>
+
+      {/* Vision, Mission & Objectives Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-secondary/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Our Purpose
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Driving educational transformation through innovation and collaboration
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Vision Card */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Eye className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  To create an equitable education ecosystem where every rural teacher and student has access to cutting-edge AI technology and digital resources, enabling them to thrive in the 21st century.
+                </p>
+                <div className="mt-4 flex items-start gap-2">
+                  <Star className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
+                  <p className="text-sm font-semibold text-foreground">Empowering 10,000+ educators by 2026</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Mission Card */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-secondary overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Target className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  To bridge the educational divide through comprehensive AI-driven training programs, digital literacy initiatives, and collaborative research that transforms teaching methodologies in rural India.
+                </p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                    <p className="text-sm">AI-powered teacher training</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                    <p className="text-sm">Digital literacy programs</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Objectives Card */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Lightbulb className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Our Objectives</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-primary">1</span>
+                    </span>
+                    <span>Deploy AI-based learning tools in 500+ rural schools</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-secondary">2</span>
+                    </span>
+                    <span>Conduct hands-on workshops for continuous skill development</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-accent">3</span>
+                    </span>
+                    <span>Foster collaborative research between educators and tech experts</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Call to Action Banner */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary via-secondary to-accent p-1">
+            <div className="bg-background rounded-3xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="text-center md:text-left">
+                  <h3 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Ready to Transform Education?
+                  </h3>
+                  <p className="text-muted-foreground text-lg">
+                    Join thousands of educators already making a difference
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 group">
+                    Join Our Workshops
+                    <Users className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  </Button>
+                  <Button size="lg" variant="outline" className="group">
+                    Explore Resources
+                    <BookOpen className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  </Button>
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 group">
+                    Partner With Us
+                    <Handshake className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
