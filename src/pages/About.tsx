@@ -30,9 +30,9 @@ const About = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About EduNGO</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Bridging Future</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We are a non-governmental organization dedicated to transforming education through technology and innovation
+            We are a non-governmental organization dedicated to transforming rural education in India through AI-driven training, digital literacy, and innovative teaching methodologies
           </p>
         </div>
 
@@ -42,13 +42,16 @@ const About = () => {
             <h2 className="text-3xl font-bold text-foreground mb-6">Our Story</h2>
             <div className="prose prose-lg text-muted-foreground space-y-4">
               <p>
-                Founded in 2009, EduNGO began with a simple yet powerful vision: to bridge the educational gap in underserved communities through technology and quality training programs. What started as a small initiative to train teachers in basic computer skills has grown into a comprehensive educational platform serving thousands of students and educators worldwide.
+                Founded with a powerful vision to bridge the digital divide in rural India, Bridging Future began as a grassroots initiative to empower teachers and students with essential technology skills. What started as small-scale computer literacy workshops in Varanasi has evolved into a comprehensive educational ecosystem serving communities across Uttar Pradesh and beyond.
               </p>
               <p>
-                Over the past 15 years, we have expanded our programs to include cutting-edge AI training, advanced computer courses, and innovative teaching methodologies. Our team of dedicated professionals works tirelessly to ensure that every program we offer meets the highest standards of quality and relevance.
+                Under the leadership of Dr. Alok Srivastava and our dedicated team, we've expanded our programs to include cutting-edge AI and machine learning training, advanced digital literacy courses, and innovative teaching methodologies. We believe that quality education should not be limited by geography or economic circumstances, and we work tirelessly to make technology education accessible to rural and semi-urban communities.
               </p>
               <p>
-                Today, we are proud to have trained over 10,000 students and certified more than 500 teachers. Our impact extends beyond numbers – we measure our success by the lives we've transformed and the communities we've empowered.
+                Our approach combines online and offline learning modalities, ensuring flexibility and accessibility for diverse learner needs. We partner with local schools, community centers, and educational institutions to deliver impactful programs that create lasting change. Through collaborative research, workshops, and hands-on training, we're building a generation of digitally empowered educators and students.
+              </p>
+              <p>
+                Today, Bridging Future stands as a testament to what's possible when education meets innovation. We've trained over 25,000 students, certified more than 1,200 teachers, and established 150+ digital learning centers across rural India. But our impact extends beyond numbers – it's measured in the dreams realized, careers transformed, and communities empowered.
               </p>
             </div>
           </div>
@@ -80,18 +83,22 @@ const About = () => {
         <section className="py-16 bg-gradient-subtle rounded-2xl animate-fade-in">
           <div className="max-w-4xl mx-auto px-8">
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Our Impact</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-2">10,000+</div>
-                <div className="text-muted-foreground">Students Trained</div>
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="text-center animate-fade-in-up">
+                <div className="text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2">25,000+</div>
+                <div className="text-muted-foreground">Students Empowered</div>
               </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-2">500+</div>
+              <div className="text-center animate-fade-in-up" style={{animationDelay: "0.1s"}}>
+                <div className="text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2">1,200+</div>
                 <div className="text-muted-foreground">Teachers Certified</div>
               </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-2">50+</div>
-                <div className="text-muted-foreground">Active Courses</div>
+              <div className="text-center animate-fade-in-up" style={{animationDelay: "0.2s"}}>
+                <div className="text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2">150+</div>
+                <div className="text-muted-foreground">Learning Centers</div>
+              </div>
+              <div className="text-center animate-fade-in-up" style={{animationDelay: "0.3s"}}>
+                <div className="text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2">50+</div>
+                <div className="text-muted-foreground">Active Programs</div>
               </div>
             </div>
           </div>

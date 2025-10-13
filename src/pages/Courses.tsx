@@ -98,9 +98,14 @@ const Courses = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Courses</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore our comprehensive range of courses designed to build skills for the future
+          <div className="inline-block px-6 py-2 bg-gradient-hero rounded-full text-primary-foreground text-sm font-medium mb-6 animate-bounce-subtle">
+            50+ Courses Available
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 bg-gradient-accent bg-clip-text text-transparent">
+            Transform Your Future
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Explore our comprehensive range of AI-driven courses, computer literacy programs, and teacher training workshops designed to empower rural communities with digital skills
           </p>
         </div>
 
@@ -109,41 +114,42 @@ const Courses = () => {
           {courses.map((course, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-lg transition-all duration-300 animate-fade-in group"
+              className="overflow-hidden hover:shadow-xl transition-all duration-500 animate-fade-in-up group hover:-translate-y-2 border-2 border-transparent hover:border-primary/20"
+              style={{animationDelay: `${index * 0.1}s`}}
             >
-              <div className="h-2 bg-gradient-hero"></div>
+              <div className="h-1 bg-gradient-hero group-hover:h-2 transition-all duration-300"></div>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-xs font-semibold">
                     {course.category}
                   </Badge>
-                  <Badge className={getLevelColor(course.level)}>{course.level}</Badge>
+                  <Badge className={`${getLevelColor(course.level)} font-semibold`}>{course.level}</Badge>
                 </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {course.title}
                 </h3>
 
-                <p className="text-muted-foreground mb-6 line-clamp-3">{course.description}</p>
+                <p className="text-muted-foreground mb-6 line-clamp-3 leading-relaxed">{course.description}</p>
 
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-muted-foreground text-sm">
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span>{course.duration}</span>
+                  <div className="flex items-center text-muted-foreground text-sm hover:text-foreground transition-colors">
+                    <Clock className="w-4 h-4 mr-2 text-primary" />
+                    <span className="font-medium">{course.duration}</span>
                   </div>
-                  <div className="flex items-center text-muted-foreground text-sm">
-                    <Users className="w-4 h-4 mr-2" />
-                    <span>{course.students} enrolled</span>
+                  <div className="flex items-center text-muted-foreground text-sm hover:text-foreground transition-colors">
+                    <Users className="w-4 h-4 mr-2 text-primary" />
+                    <span className="font-medium">{course.students} enrolled</span>
                   </div>
-                  <div className="flex items-center text-muted-foreground text-sm">
-                    <BookOpen className="w-4 h-4 mr-2" />
-                    <span>{course.type}</span>
+                  <div className="flex items-center text-muted-foreground text-sm hover:text-foreground transition-colors">
+                    <BookOpen className="w-4 h-4 mr-2 text-primary" />
+                    <span className="font-medium">{course.type}</span>
                   </div>
                 </div>
 
                 <Link to="/enrollment">
-                  <Button className="w-full" variant="hero">
-                    <Award className="w-4 h-4 mr-2" />
+                  <Button className="w-full group/btn" variant="hero">
+                    <Award className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
                     Enroll Now
                   </Button>
                 </Link>

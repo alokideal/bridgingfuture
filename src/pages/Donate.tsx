@@ -146,7 +146,7 @@ const Donate = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" variant="warm" size="lg">
+                  <Button type="submit" className="w-full" variant="accent" size="lg">
                     <Heart className="w-5 h-5 mr-2" />
                     Donate ${amount === "custom" ? customAmount || "0" : amount}
                   </Button>
