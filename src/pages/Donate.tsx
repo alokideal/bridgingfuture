@@ -9,15 +9,15 @@ import { toast } from "sonner";
 
 const Donate = () => {
   const [donationType, setDonationType] = useState("one-time");
-  const [amount, setAmount] = useState("50");
+  const [amount, setAmount] = useState("2000");
   const [customAmount, setCustomAmount] = useState("");
 
-  const predefinedAmounts = ["25", "50", "100", "250", "500"];
+  const predefinedAmounts = ["1000", "2000", "5000", "10000", "25000"];
 
   const handleDonate = (e: React.FormEvent) => {
     e.preventDefault();
     const finalAmount = amount === "custom" ? customAmount : amount;
-    toast.success(`Thank you for your ${finalAmount} donation! Redirecting to payment...`);
+    toast.success(`Thank you for your ₹${finalAmount} donation! Redirecting to payment...`);
   };
 
   const impactAreas = [
@@ -42,11 +42,11 @@ const Donate = () => {
   ];
 
   const impactExamples = [
-    { amount: "$25", impact: "Provides course materials for 1 student" },
-    { amount: "$50", impact: "Covers software licenses for a training session" },
-    { amount: "$100", impact: "Supports a full scholarship for one course" },
-    { amount: "$250", impact: "Funds teacher training for 5 educators" },
-    { amount: "$500", impact: "Equips a classroom with essential technology" },
+    { amount: "₹1,000", impact: "Provides course materials for 1 student" },
+    { amount: "₹2,000", impact: "Covers software licenses for a training session" },
+    { amount: "₹5,000", impact: "Supports a full scholarship for one course" },
+    { amount: "₹10,000", impact: "Funds teacher training for 5 educators" },
+    { amount: "₹25,000", impact: "Equips a classroom with essential technology" },
   ];
 
   return (
@@ -102,7 +102,7 @@ const Donate = () => {
                               : "border-border hover:border-primary"
                           }`}
                         >
-                          ${value}
+                          ₹{value}
                         </button>
                       ))}
                       <button
@@ -148,7 +148,7 @@ const Donate = () => {
 
                   <Button type="submit" className="w-full" variant="accent" size="lg">
                     <Heart className="w-5 h-5 mr-2" />
-                    Donate ${amount === "custom" ? customAmount || "0" : amount}
+                    Donate ₹{amount === "custom" ? customAmount || "0" : amount}
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center">
@@ -217,7 +217,7 @@ const Donate = () => {
                     <div className="opacity-90">Active Programs</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold mb-1">$2M+</div>
+                    <div className="text-4xl font-bold mb-1">₹16Cr+</div>
                     <div className="opacity-90">In Scholarships</div>
                   </div>
                 </div>

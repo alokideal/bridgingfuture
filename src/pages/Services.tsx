@@ -86,33 +86,36 @@ const Services = () => {
             {mainServices.map((service, index) => (
               <div
                 key={index}
-                className={`grid md:grid-cols-2 gap-8 items-center animate-fade-in ${
+                className={`grid md:grid-cols-2 gap-8 items-center animate-fade-in-up ${
                   index % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={index % 2 === 1 ? "md:order-2" : ""}>
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="rounded-2xl shadow-xl w-full h-auto hover:scale-105 transition-transform duration-300 border-2 border-border/50"
                   />
                 </div>
                 <div className={index % 2 === 1 ? "md:order-1" : ""}>
-                  <div className="w-20 h-20 bg-gradient-hero rounded-lg flex items-center justify-center text-primary-foreground mb-6">
+                  <div className="w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center text-primary-foreground mb-6 shadow-glow animate-pulse-glow">
                     {service.icon}
                   </div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">{service.title}</h2>
-                  <p className="text-muted-foreground text-lg mb-6">{service.description}</p>
-                  <div className="space-y-2 mb-6">
+                  <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{service.description}</p>
+                  <div className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-muted-foreground">{feature}</span>
+                      <div key={idx} className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: `${(index * 4 + idx) * 0.05}s` }}>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+                        <span className="text-muted-foreground font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
                   <Link to="/courses">
-                    <Button variant="hero">Explore Courses</Button>
+                    <Button variant="hero" asChild className="shadow-lg">
+                      <span>Explore Courses</span>
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -121,22 +124,22 @@ const Services = () => {
         </section>
 
         {/* Delivery Modes */}
-        <section className="py-16 bg-gradient-subtle rounded-2xl animate-fade-in">
+        <section className="py-16 bg-gradient-subtle rounded-2xl animate-fade-in shadow-lg border border-border/50">
           <div className="px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">How We Deliver</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 bg-gradient-accent bg-clip-text text-transparent">How We Deliver</h2>
               <p className="text-muted-foreground text-lg">Multiple learning formats to suit your needs</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {deliveryModes.map((mode, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up border-2 hover:border-primary/20" style={{ animationDelay: `${index * 0.1}s` }}>
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-gradient-hero rounded-lg flex items-center justify-center text-primary-foreground mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center text-primary-foreground mx-auto mb-4 shadow-glow">
                       {mode.icon}
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">{mode.title}</h3>
-                    <p className="text-muted-foreground text-sm">{mode.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{mode.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -146,20 +149,20 @@ const Services = () => {
 
         {/* CTA Section */}
         <section className="mt-20 text-center animate-fade-in">
-          <div className="max-w-3xl mx-auto bg-gradient-warm text-secondary-foreground rounded-2xl p-12">
+          <div className="max-w-3xl mx-auto bg-gradient-hero text-primary-foreground rounded-2xl p-12 shadow-glow">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-lg mb-8 opacity-90">
               Join thousands of learners who have transformed their lives through our programs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/enrollment">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-secondary-foreground/10 border-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
-                  Enroll Now
+                <Button size="lg" variant="outline" asChild className="w-full sm:w-auto bg-primary-foreground/10 border-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg">
+                  <span>Enroll Now</span>
                 </Button>
               </Link>
               <Link to="/courses">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-secondary-foreground/10 border-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
-                  View All Courses
+                <Button size="lg" variant="outline" asChild className="w-full sm:w-auto bg-primary-foreground/10 border-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg">
+                  <span>View All Courses</span>
                 </Button>
               </Link>
             </div>

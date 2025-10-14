@@ -56,7 +56,7 @@ const Enrollment = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Enrollment Form */}
-          <Card className="animate-fade-in">
+          <Card className="animate-fade-in-up hover:shadow-xl transition-all duration-300 border-2">
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold text-foreground mb-6">Enrollment Form</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -92,7 +92,7 @@ const Enrollment = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+91 98765 43210"
                     required
                     className="mt-2"
                   />
@@ -141,13 +141,13 @@ const Enrollment = () => {
           </Card>
 
           {/* Benefits & Info */}
-          <div className="space-y-8 animate-fade-in">
-            <Card>
+          <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <Card className="hover:shadow-xl transition-all duration-300 border-2">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Why Enroll with EduNGO?</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Why Enroll with Bridging Future?</h3>
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-3">
+                    <div key={index} className="flex items-start space-x-3 animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
                       <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{benefit}</span>
                     </div>
@@ -156,7 +156,7 @@ const Enrollment = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-hero text-primary-foreground">
+            <Card className="bg-gradient-hero text-primary-foreground shadow-glow">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-4">What Happens Next?</h3>
                 <div className="space-y-4">
@@ -176,16 +176,17 @@ const Enrollment = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="hover:shadow-xl transition-all duration-300 border-2">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-4">Need Help?</h3>
                 <p className="text-muted-foreground mb-4">
                   Have questions about our programs? Our team is here to help you find the right course for your goals.
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p>📧 Email: info@edungo.org</p>
-                  <p>📞 Phone: +1 (555) 123-4567</p>
-                  <p>🕐 Hours: Mon-Fri, 9:00 AM - 6:00 PM</p>
+                  <p>📧 Email: info@bridgingfuture.com</p>
+                  <p>📞 Contact: Dr. Alok Srivastava, Managing Trustee</p>
+                  <p>📍 Address: 306, Rudra Sanskriti Apartment, Brij Enclave Colony, Sunderpur, Varanasi, Uttar Pradesh – 221005</p>
+                  <p>🌐 Website: www.bridgingfuture.com</p>
                 </div>
               </CardContent>
             </Card>

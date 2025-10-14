@@ -118,6 +118,89 @@ const About = () => {
             </p>
           </div>
         </section>
+
+        {/* Success Stories Section */}
+        <section className="mt-20 animate-fade-in">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Success Stories</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Real stories from real people whose lives have been transformed through education
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {[
+              {
+                name: "Ananya Sharma",
+                role: "Government School Teacher, Varanasi",
+                image: "/src/assets/story-teacher-digital.jpg",
+                story: "After completing the Digital Tools for Educators course at Bridging Future Trust, I completely transformed my classroom in rural Varanasi. My students are now more engaged with technology, and I can seamlessly integrate digital learning into our curriculum. The training gave me the confidence to bridge the digital divide in our community.",
+                impact: "Now trains 50+ teachers across Uttar Pradesh in digital literacy",
+              },
+              {
+                name: "Rahul Verma",
+                role: "Student, Web Development Course",
+                image: "/src/assets/story-student-coding.jpg",
+                story: "Coming from a small town in Uttar Pradesh with zero coding knowledge, I was hesitant. But six months after joining Bridging Future Trust's web development program, I built my first e-commerce website and secured an internship at a Bangalore-based tech startup. The instructors didn't just teach me to code—they taught me how to think like a problem solver.",
+                impact: "Currently working as a junior web developer at a leading IT firm",
+              },
+              {
+                name: "Priya Gupta",
+                role: "AI Training Graduate",
+                image: "/src/assets/story-ai-graduate.jpg",
+                story: "The AI Fundamentals course at Bridging Future Trust opened up a whole new world for me. Coming from a non-technical background in Varanasi, I was nervous at first, but the supportive environment and excellent mentorship made all the difference. Today, I'm pursuing advanced studies in data science and helping local businesses leverage AI for growth.",
+                impact: "Started her own AI consulting firm serving MSMEs in North India",
+              },
+            ].map((story, index) => (
+              <Card
+                key={index}
+                className={`overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in-up border-2 ${
+                  index % 2 === 0 ? "" : "bg-muted/30"
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-0">
+                  <div
+                    className={`grid md:grid-cols-2 gap-0 ${
+                      index % 2 === 1 ? "md:flex-row-reverse" : ""
+                    }`}
+                  >
+                    <div className={`relative ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                      <img
+                        src={story.image}
+                        alt={story.name}
+                        className="w-full h-full min-h-[300px] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
+                    </div>
+
+                    <div className={`p-8 md:p-12 flex flex-col justify-center ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                      <div className="w-12 h-12 text-primary mb-6 opacity-50">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                        </svg>
+                      </div>
+                      
+                      <blockquote className="text-lg text-muted-foreground mb-6 italic">
+                        "{story.story}"
+                      </blockquote>
+
+                      <div className="mb-4">
+                        <h3 className="text-2xl font-bold text-foreground">{story.name}</h3>
+                        <p className="text-muted-foreground">{story.role}</p>
+                      </div>
+
+                      <div className="pt-4 border-t border-border">
+                        <p className="text-sm font-medium text-primary">Impact:</p>
+                        <p className="text-muted-foreground">{story.impact}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

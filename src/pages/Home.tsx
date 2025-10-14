@@ -184,15 +184,21 @@ const Home = () => {
               Transforming rural education through AI-driven training, digital literacy, and collaborative research
             </p>
             <div className="flex flex-wrap gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" variant="secondary" className="group hover:scale-105 transition-transform">
-                Join Our Workshops
-                <Rocket className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+              <Button size="lg" variant="secondary" asChild className="group hover:scale-105 transition-transform shadow-lg">
+                <Link to="/courses">
+                  Join Our Workshops
+                  <Rocket className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 hover:scale-105 transition-transform">
-                Explore Resources
+              <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/20 hover:scale-105 transition-transform">
+                <Link to="/courses">
+                  Explore Resources
+                </Link>
               </Button>
-              <Button size="lg" className="bg-accent hover:bg-accent/90 hover:scale-105 transition-transform">
-                Partner With Us
+              <Button size="lg" asChild className="bg-accent hover:bg-accent/90 hover:scale-105 transition-transform shadow-lg">
+                <Link to="/enrollment">
+                  Partner With Us
+                </Link>
               </Button>
             </div>
           </div>
@@ -303,17 +309,23 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4 justify-center">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 group">
-                    Join Our Workshops
-                    <Users className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <Button size="lg" asChild className="bg-primary hover:bg-primary/90 group shadow-lg">
+                    <Link to="/courses">
+                      Join Our Workshops
+                      <Users className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    </Link>
                   </Button>
-                  <Button size="lg" variant="outline" className="group">
-                    Explore Resources
-                    <BookOpen className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <Button size="lg" variant="outline" asChild className="group">
+                    <Link to="/courses">
+                      Explore Resources
+                      <BookOpen className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    </Link>
                   </Button>
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 group">
-                    Partner With Us
-                    <Handshake className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <Button size="lg" asChild className="bg-accent hover:bg-accent/90 group shadow-lg">
+                    <Link to="/enrollment">
+                      Partner With Us
+                      <Handshake className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    </Link>
                   </Button>
                 </div>
               </div>
