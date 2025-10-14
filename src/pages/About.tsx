@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Heart, Users } from "lucide-react";
+import logo from "@/assets/bridging-future-logo.png";
 
 const About = () => {
   const values = [
@@ -29,11 +30,17 @@ const About = () => {
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Bridging Future</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We are a non-governmental organization dedicated to transforming rural education in India through AI-driven training, digital literacy, and innovative teaching methodologies
+        <div className="text-center mb-20 animate-fade-in">
+          <img src={logo} alt="Bridging Future" className="h-28 w-auto mx-auto mb-8 animate-bounce-subtle drop-shadow-2xl" />
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="bg-gradient-accent bg-clip-text text-transparent">About Bridging Future</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            Transforming rural education in India through AI-driven training, digital literacy, and innovative teaching methodologies
           </p>
+          <div className="flex justify-center mt-6">
+            <p className="text-lg font-semibold text-primary italic">Innovate, Educate & Empower</p>
+          </div>
         </div>
 
         {/* Story Section */}

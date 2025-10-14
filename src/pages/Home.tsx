@@ -34,6 +34,7 @@ import outdoorLearning from "@/assets/outdoor-learning.jpg";
 import ruralClassroom from "@/assets/rural-classroom.jpg";
 import teacherTraining from "@/assets/teacher-training-rural.jpg";
 import studentsTech from "@/assets/students-technology.jpg";
+import logo from "@/assets/bridging-future-logo.png";
 
 const Home = () => {
   const services = [

@@ -11,7 +11,6 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
     { name: "Courses", path: "/courses" },
     { name: "Events", path: "/events" },
   ];
@@ -23,8 +22,11 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={logo} alt="Bridging Future Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
-            <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">Bridging Future</span>
+            <img src={logo} alt="Bridging Future Logo" className="h-14 w-auto transition-transform duration-300 group-hover:scale-105" />
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold bg-gradient-accent bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">Bridging Future</span>
+              <span className="text-xs font-medium text-muted-foreground italic">Innovate, Educate & Empower</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

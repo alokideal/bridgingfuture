@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Clock, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/bridging-future-logo.png";
 
 const Events = () => {
   const upcomingEvents = [
@@ -73,24 +74,33 @@ const Events = () => {
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Events</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <div className="text-center mb-20 animate-fade-in">
+          <img src={logo} alt="Bridging Future" className="h-28 w-auto mx-auto mb-8 animate-bounce-subtle drop-shadow-2xl" />
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="bg-gradient-hero bg-clip-text text-transparent">Events & News</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Join us for workshops, seminars, and community events that bring education and technology together
           </p>
         </div>
 
         {/* Upcoming Events */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-foreground mb-8 animate-fade-in">Upcoming Events</h2>
+        <section className="mb-24">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center animate-fade-in">
+              <span className="bg-gradient-accent bg-clip-text text-transparent">Upcoming Events</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-accent mx-auto rounded-full"></div>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             {upcomingEvents.map((event, index) => (
               <Card
                 key={index}
-                className="overflow-hidden hover:shadow-lg transition-all duration-300 animate-fade-in"
+                className="overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 animate-fade-in-up border-2 hover:border-primary/40 bg-gradient-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="h-2 bg-gradient-hero"></div>
-                <CardContent className="p-6">
+                <div className="h-2 bg-gradient-accent"></div>
+                <CardContent className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="secondary">{event.type}</Badge>
                     <Badge className="bg-green-500/10 text-green-700 dark:text-green-400">
@@ -133,11 +143,16 @@ const Events = () => {
         </section>
 
         {/* Past Events */}
-        <section className="animate-fade-in">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Past Events</h2>
+        <section className="mb-24 animate-fade-in">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+              <span className="bg-gradient-hero bg-clip-text text-transparent">Past Events</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             {pastEvents.map((event, index) => (
-              <Card key={index} className="hover:shadow-md transition-shadow duration-300">
+              <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-all duration-500 border-2 hover:border-accent/40 bg-card/80 backdrop-blur" style={{ animationDelay: `${index * 0.05}s` }}>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-2">{event.title}</h3>
                   <div className="flex items-center text-muted-foreground text-sm mb-3">
@@ -156,15 +171,18 @@ const Events = () => {
         </section>
 
         {/* Latest News Section */}
-        <section className="mt-20 animate-fade-in">
+        <section className="mt-24 animate-fade-in bg-gradient-hero/10 backdrop-blur-sm rounded-3xl p-12 border-2 border-primary/20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Latest News & Updates</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-accent bg-clip-text text-transparent">Latest News & Updates</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6 rounded-full"></div>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
               Stay informed about our recent activities, achievements, and announcements
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Bridging Future Launches New AI Training Program",
@@ -200,25 +218,25 @@ const Events = () => {
                 title: "Student Success Stories: From Varanasi to Bangalore",
                 date: "February 20, 2024",
                 category: "Impact",
-                excerpt: "Meet three of our students from Uttar Pradesh who have leveraged their Bridging Future education to launch successful careers in technology hubs like Bangalore and now mentor the next generation.",
+                excerpt: "Inspiring stories of students who completed our programs and secured positions with leading tech companies across India, demonstrating the real-world impact of our training initiatives.",
               },
             ].map((news, index) => (
               <Card
                 key={index}
-                className="overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up border-2 group"
+                className="overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border-2 hover:border-accent/50 bg-card backdrop-blur animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="h-2 bg-gradient-hero"></div>
-                <CardContent className="p-6">
-                  <Badge variant="secondary" className="mb-3">{news.category}</Badge>
-                  <div className="flex items-center text-muted-foreground text-sm mb-3">
+                <div className="h-2 bg-gradient-accent"></div>
+                <CardContent className="p-8">
+                  <Badge variant="secondary" className="mb-4 font-semibold">{news.category}</Badge>
+                  <div className="flex items-center text-muted-foreground text-sm mb-4">
                     <Calendar className="w-4 h-4 mr-2 text-primary" />
                     <span>{news.date}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                     {news.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-3">{news.excerpt}</p>
+                  <p className="text-muted-foreground leading-relaxed">{news.excerpt}</p>
                 </CardContent>
               </Card>
             ))}
