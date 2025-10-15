@@ -8,76 +8,303 @@ import logo from "@/assets/bridging-future-logo.png";
 
 const Courses = () => {
   const courses = [
+    // Teacher Training & Education
     {
-      category: "AI Training",
-      title: "AI Fundamentals for Educators",
-      description: "Learn the basics of artificial intelligence and how to integrate AI tools into your teaching practice.",
+      category: "Teacher Training",
+      title: "Modern Teaching Methodologies",
+      description: "Explore innovative teaching strategies and classroom management techniques for 21st-century education.",
       duration: "8 weeks",
-      level: "Beginner",
-      students: "250+",
-      type: "Online",
-    },
-    {
-      category: "AI Training",
-      title: "Machine Learning Basics",
-      description: "Introduction to machine learning concepts, algorithms, and practical applications.",
-      duration: "10 weeks",
-      level: "Intermediate",
-      students: "180+",
+      level: "All Levels",
+      students: "520+",
       type: "Hybrid",
+      featured: true,
     },
     {
-      category: "Computer Courses",
-      title: "Digital Literacy Essentials",
-      description: "Master essential computer skills including Microsoft Office, email, and internet basics.",
+      category: "Teacher Training",
+      title: "Digital Tools for Educators",
+      description: "Master educational technology tools including Google Classroom, Zoom, and interactive learning platforms.",
       duration: "6 weeks",
       level: "Beginner",
-      students: "500+",
-      type: "Both",
+      students: "480+",
+      type: "Online",
+      featured: true,
     },
     {
-      category: "Computer Courses",
-      title: "Web Development Fundamentals",
-      description: "Learn HTML, CSS, and JavaScript to build modern, responsive websites.",
-      duration: "12 weeks",
-      level: "Beginner",
-      students: "320+",
+      category: "Teacher Training",
+      title: "Classroom Management Excellence",
+      description: "Advanced techniques for managing diverse classrooms and creating inclusive learning environments.",
+      duration: "6 weeks",
+      level: "Intermediate",
+      students: "380+",
+      type: "Offline",
+    },
+    {
+      category: "Teacher Training",
+      title: "Assessment & Evaluation Strategies",
+      description: "Learn effective methods for student assessment, grading, and providing constructive feedback.",
+      duration: "5 weeks",
+      level: "All Levels",
+      students: "350+",
       type: "Online",
     },
     {
-      category: "Computer Courses",
-      title: "Data Analysis with Excel",
-      description: "Advanced Excel techniques for data analysis, visualization, and reporting.",
+      category: "Teacher Training",
+      title: "Special Education & Inclusive Teaching",
+      description: "Strategies for teaching students with diverse learning needs and creating accessible education.",
       duration: "8 weeks",
       level: "Intermediate",
       students: "290+",
       type: "Hybrid",
     },
+    
+    // TET (Teacher Eligibility Test) Courses
     {
-      category: "Teacher Training",
-      title: "Modern Teaching Methodologies",
-      description: "Explore innovative teaching strategies and classroom management techniques.",
-      duration: "6 weeks",
+      category: "TET Preparation",
+      title: "TET Paper 1 Preparation (Classes I-V)",
+      description: "Comprehensive preparation for CTET/UPTET Paper 1 covering Child Development, EVS, Mathematics, and Languages.",
+      duration: "12 weeks",
       level: "All Levels",
-      students: "400+",
-      type: "Offline",
+      students: "680+",
+      type: "Both",
+      featured: true,
     },
     {
-      category: "Teacher Training",
-      title: "Digital Tools for Educators",
-      description: "Master educational technology tools to enhance student engagement and learning.",
+      category: "TET Preparation",
+      title: "TET Paper 2 Preparation (Classes VI-VIII)",
+      description: "Complete CTET/UPTET Paper 2 preparation with subject-specific content and teaching methodology.",
+      duration: "12 weeks",
+      level: "All Levels",
+      students: "590+",
+      type: "Both",
+    },
+    {
+      category: "TET Preparation",
+      title: "Child Development & Pedagogy",
+      description: "In-depth coverage of child psychology, learning theories, and pedagogical approaches for TET exams.",
+      duration: "6 weeks",
+      level: "All Levels",
+      students: "450+",
+      type: "Online",
+    },
+    
+    // AI & Technology Training
+    {
+      category: "AI & Technology",
+      title: "AI Fundamentals for Educators",
+      description: "Learn the basics of artificial intelligence and how to integrate AI tools into your teaching practice.",
       duration: "8 weeks",
       level: "Beginner",
-      students: "380+",
+      students: "320+",
+      type: "Online",
+      featured: true,
+    },
+    {
+      category: "AI & Technology",
+      title: "Machine Learning Basics",
+      description: "Introduction to machine learning concepts, algorithms, and practical applications in education and industry.",
+      duration: "10 weeks",
+      level: "Intermediate",
+      students: "280+",
+      type: "Hybrid",
+    },
+    {
+      category: "AI & Technology",
+      title: "Data Science Fundamentals",
+      description: "Master data analysis, statistics, Python programming, and visualization techniques for data science careers.",
+      duration: "14 weeks",
+      level: "Intermediate",
+      students: "340+",
+      type: "Online",
+      featured: true,
+    },
+    {
+      category: "AI & Technology",
+      title: "Advanced Data Science & Analytics",
+      description: "Deep dive into machine learning algorithms, big data processing, and advanced analytics techniques.",
+      duration: "16 weeks",
+      level: "Advanced",
+      students: "180+",
+      type: "Online",
+    },
+    
+    // Computer & Digital Skills
+    {
+      category: "Computer Courses",
+      title: "Digital Literacy Essentials",
+      description: "Master essential computer skills including Microsoft Office, email, internet, and digital communication.",
+      duration: "6 weeks",
+      level: "Beginner",
+      students: "720+",
+      type: "Both",
+    },
+    {
+      category: "Computer Courses",
+      title: "Web Development Fundamentals",
+      description: "Learn HTML, CSS, and JavaScript to build modern, responsive websites from scratch.",
+      duration: "12 weeks",
+      level: "Beginner",
+      students: "420+",
       type: "Online",
     },
     {
-      category: "Student Programs",
-      title: "Python Programming for Beginners",
-      description: "Start your coding journey with Python, one of the most popular programming languages.",
+      category: "Computer Courses",
+      title: "Advanced Excel & Data Analysis",
+      description: "Master Excel formulas, pivot tables, macros, and data visualization for business analytics.",
+      duration: "8 weeks",
+      level: "Intermediate",
+      students: "380+",
+      type: "Hybrid",
+    },
+    {
+      category: "Computer Courses",
+      title: "Graphic Design with Adobe Suite",
+      description: "Professional training in Photoshop, Illustrator, and InDesign for creative digital design.",
       duration: "10 weeks",
       level: "Beginner",
+      students: "350+",
+      type: "Offline",
+      featured: true,
+    },
+    {
+      category: "Computer Courses",
+      title: "Digital Marketing Fundamentals",
+      description: "Learn SEO, social media marketing, content marketing, and Google Ads for digital business growth.",
+      duration: "8 weeks",
+      level: "Beginner",
+      students: "440+",
+      type: "Online",
+    },
+    
+    // Vocational Training for Students
+    {
+      category: "Vocational Training",
+      title: "Python Programming for Beginners",
+      description: "Start your coding journey with Python - perfect for students exploring programming careers.",
+      duration: "10 weeks",
+      level: "Beginner",
+      students: "560+",
+      type: "Online",
+    },
+    {
+      category: "Vocational Training",
+      title: "Mobile App Development",
+      description: "Learn to build Android and iOS apps using modern frameworks and tools.",
+      duration: "12 weeks",
+      level: "Intermediate",
+      students: "290+",
+      type: "Online",
+    },
+    {
+      category: "Vocational Training",
+      title: "Video Editing & Content Creation",
+      description: "Master video editing with Premiere Pro, After Effects, and content creation for YouTube and social media.",
+      duration: "8 weeks",
+      level: "Beginner",
+      students: "380+",
+      type: "Hybrid",
+    },
+    {
+      category: "Vocational Training",
+      title: "Accounting & Tally ERP",
+      description: "Professional accounting skills with Tally ERP, GST, and financial management for career opportunities.",
+      duration: "10 weeks",
+      level: "Beginner",
+      students: "420+",
+      type: "Offline",
+    },
+    {
+      category: "Vocational Training",
+      title: "Spoken English & Communication",
+      description: "Improve English speaking, writing, and communication skills for professional success.",
+      duration: "12 weeks",
+      level: "All Levels",
+      students: "640+",
+      type: "Both",
+    },
+    
+    // Women Empowerment Courses
+    {
+      category: "Women Empowerment",
+      title: "Digital Entrepreneurship for Women",
+      description: "Learn to start and grow online businesses, e-commerce, and digital marketing for women entrepreneurs.",
+      duration: "10 weeks",
+      level: "Beginner",
+      students: "380+",
+      type: "Hybrid",
+      featured: true,
+    },
+    {
+      category: "Women Empowerment",
+      title: "Financial Literacy & Planning",
+      description: "Essential financial management, investment, savings, and wealth creation skills for women.",
+      duration: "6 weeks",
+      level: "All Levels",
       students: "450+",
+      type: "Online",
+    },
+    {
+      category: "Women Empowerment",
+      title: "Career Re-entry Program",
+      description: "Specialized program for women returning to work after career breaks, covering skills and confidence building.",
+      duration: "8 weeks",
+      level: "All Levels",
+      students: "290+",
+      type: "Hybrid",
+    },
+    {
+      category: "Women Empowerment",
+      title: "Leadership & Management Skills",
+      description: "Develop leadership qualities, team management, and decision-making skills for professional growth.",
+      duration: "8 weeks",
+      level: "Intermediate",
+      students: "320+",
+      type: "Online",
+    },
+    {
+      category: "Women Empowerment",
+      title: "Handicrafts & Small Business",
+      description: "Traditional and modern handicraft skills with business development for home-based enterprises.",
+      duration: "10 weeks",
+      level: "Beginner",
+      students: "410+",
+      type: "Offline",
+    },
+    
+    // Health & Wellness Education
+    {
+      category: "Health Education",
+      title: "Public Health & Hygiene Awareness",
+      description: "Essential knowledge on public health, sanitation, disease prevention, and community health.",
+      duration: "6 weeks",
+      level: "All Levels",
+      students: "380+",
+      type: "Both",
+    },
+    {
+      category: "Health Education",
+      title: "Nutrition & Wellness Coaching",
+      description: "Learn about nutrition science, healthy eating, and wellness practices for personal and community health.",
+      duration: "8 weeks",
+      level: "Beginner",
+      students: "320+",
+      type: "Hybrid",
+    },
+    {
+      category: "Health Education",
+      title: "First Aid & Emergency Response",
+      description: "Critical first aid skills, CPR, and emergency response training for schools and communities.",
+      duration: "4 weeks",
+      level: "All Levels",
+      students: "450+",
+      type: "Offline",
+    },
+    {
+      category: "Health Education",
+      title: "Mental Health & Counseling Basics",
+      description: "Understanding mental health, stress management, and basic counseling techniques for educators and caregivers.",
+      duration: "8 weeks",
+      level: "Beginner",
+      students: "280+",
       type: "Online",
     },
   ];
@@ -118,15 +345,15 @@ const Courses = () => {
       <div className="container mx-auto px-4">
         {/* Hero Section with Logo */}
         <div className="text-center mb-20 animate-fade-in">
-          <img src={logo} alt="Bridging Future" className="h-28 w-auto mx-auto mb-6 animate-bounce-subtle drop-shadow-2xl" />
+          <img src={logo} alt="Bridging Future" className="h-32 w-auto mx-auto mb-6 animate-bounce-subtle drop-shadow-2xl" />
           <div className="inline-block px-8 py-3 bg-gradient-hero rounded-full text-primary-foreground font-bold mb-6 shadow-glow animate-pulse-glow text-lg">
-            50+ Courses & Services Available
+            40+ Comprehensive Courses Available
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-accent bg-clip-text text-transparent drop-shadow-lg">Our Courses & Services</span>
+            <span className="bg-gradient-accent bg-clip-text text-transparent drop-shadow-lg">Transform Your Future</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Comprehensive educational programs designed to empower teachers and students with essential skills for the digital future
+            From Teacher Training to Data Science, Women Empowerment to Health Education - Discover programs that empower communities and create opportunities
           </p>
         </div>
 
@@ -260,44 +487,51 @@ const Courses = () => {
             {courses.map((course, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border-2 hover:border-primary/40 animate-fade-in-up bg-gradient-card backdrop-blur"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`group overflow-hidden hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border-2 hover:border-primary/40 animate-fade-in-up bg-gradient-card backdrop-blur ${
+                  course.featured ? 'ring-2 ring-accent/50 shadow-xl' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="h-2 bg-gradient-accent group-hover:h-3 transition-all duration-300"></div>
-                <CardContent className="p-6">
+                <div className={`h-2 ${course.featured ? 'bg-gradient-accent' : 'bg-gradient-hero'} group-hover:h-3 transition-all duration-300`}></div>
+                <CardContent className="p-6 relative">
+                  {course.featured && (
+                    <div className="absolute top-4 right-4 bg-accent text-primary-foreground px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse-glow">
+                      ⭐ Featured
+                    </div>
+                  )}
                   <div className="flex items-start justify-between mb-4">
-                    <span className="text-sm font-bold px-4 py-2 bg-primary/10 text-primary rounded-full border border-primary/20">
+                    <span className="text-xs font-bold px-3 py-1.5 bg-primary/10 text-primary rounded-full border border-primary/20">
                       {course.category}
                     </span>
-                    <span className={`text-sm font-bold px-4 py-2 rounded-full border ${getLevelColor(course.level)}`}>
+                    <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${getLevelColor(course.level)}`}>
                       {course.level}
                     </span>
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2 min-h-[3.5rem]">
                     {course.title}
                   </h3>
 
-                  <p className="text-muted-foreground mb-6 line-clamp-2 leading-relaxed">{course.description}</p>
+                  <p className="text-muted-foreground text-sm mb-6 line-clamp-3 leading-relaxed min-h-[4rem]">{course.description}</p>
 
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-2.5 mb-6">
                     <div className="flex items-center text-muted-foreground text-sm hover:text-foreground transition-colors">
-                      <Clock className="w-5 h-5 mr-3 text-primary" />
+                      <Clock className="w-4 h-4 mr-2.5 text-primary" />
                       <span className="font-semibold">{course.duration}</span>
                     </div>
                     <div className="flex items-center text-muted-foreground text-sm hover:text-foreground transition-colors">
-                      <Users className="w-5 h-5 mr-3 text-primary" />
+                      <Users className="w-4 h-4 mr-2.5 text-primary" />
                       <span className="font-semibold">{course.students} enrolled</span>
                     </div>
                     <div className="flex items-center text-muted-foreground text-sm hover:text-foreground transition-colors">
-                      <Briefcase className="w-5 h-5 mr-3 text-primary" />
+                      <Briefcase className="w-4 h-4 mr-2.5 text-primary" />
                       <span className="font-semibold">{course.type}</span>
                     </div>
                   </div>
 
                   <Link to="/enrollment">
-                    <Button className="w-full group/btn shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" variant="hero">
-                      <Award className="w-5 h-5 mr-2 group-hover/btn:rotate-12 transition-transform" />
+                    <Button className="w-full group/btn shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" variant={course.featured ? "hero" : "default"}>
+                      <Award className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
                       Enroll Now
                     </Button>
                   </Link>
