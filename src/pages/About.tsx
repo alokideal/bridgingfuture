@@ -113,16 +113,101 @@ const About = () => {
 
         {/* Team Section */}
         <section className="mt-20 animate-fade-in">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Team</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="bg-gradient-accent bg-clip-text text-transparent">Meet Our Team</span>
+            </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Meet the dedicated professionals working to make quality education accessible to all
+              Dedicated professionals with decades of combined experience in education, technology, and social impact
             </p>
           </div>
-          <div className="max-w-4xl mx-auto bg-muted/50 rounded-2xl p-8 text-center">
-            <p className="text-muted-foreground text-lg">
-              Our team consists of experienced educators, technology experts, and passionate volunteers who believe in the transformative power of education. Together, we work towards creating opportunities for learning and growth in communities around the world.
-            </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {[
+              {
+                name: "Dr. Alok Srivastava",
+                role: "Founder & Director",
+                image: "/src/assets/team-director.jpg",
+                bio: "15+ years in educational technology and rural development. Ph.D. in Education Policy from BHU.",
+                expertise: ["Educational Leadership", "Policy Development", "Rural Education"],
+              },
+              {
+                name: "Rajesh Kumar",
+                role: "Program Coordinator",
+                image: "/src/assets/team-coordinator.jpg",
+                bio: "Former government school principal with 20 years of teaching experience. Specializes in teacher training.",
+                expertise: ["Teacher Training", "Curriculum Design", "Educational Assessment"],
+              },
+              {
+                name: "Priya Sharma",
+                role: "AI & Technology Lead",
+                image: "/src/assets/team-ai-specialist.jpg",
+                bio: "IIT graduate with expertise in AI/ML. Passionate about making technology accessible to rural communities.",
+                expertise: ["Artificial Intelligence", "Machine Learning", "Digital Literacy"],
+              },
+              {
+                name: "Amit Verma",
+                role: "Corporate Training Head",
+                image: "/src/assets/team-trainer.jpg",
+                bio: "12+ years in corporate training and management. Certified in multiple professional development programs.",
+                expertise: ["Corporate Training", "Leadership Development", "Professional Skills"],
+              },
+            ].map((member, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-fade-in-up border-2 hover:border-primary"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
+                    <p className="text-primary font-semibold mb-3">{member.role}</p>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{member.bio}</p>
+                    
+                    <div className="space-y-1">
+                      <p className="text-xs font-semibold text-foreground mb-2">Areas of Expertise:</p>
+                      {member.expertise.map((skill, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <span className="text-xs text-muted-foreground">{skill}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Additional Team Info */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <Card className="bg-gradient-to-br from-primary/10 to-transparent border-primary/20">
+              <CardContent className="p-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">25+</div>
+                <p className="text-muted-foreground">Expert Trainers</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-accent/10 to-transparent border-accent/20">
+              <CardContent className="p-6 text-center">
+                <div className="text-4xl font-bold text-accent mb-2">100+</div>
+                <p className="text-muted-foreground">Dedicated Volunteers</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-secondary/10 to-transparent border-secondary/20">
+              <CardContent className="p-6 text-center">
+                <div className="text-4xl font-bold text-secondary mb-2">50+</div>
+                <p className="text-muted-foreground">Partner Educators</p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
